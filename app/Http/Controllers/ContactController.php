@@ -35,7 +35,7 @@ class ContactController extends Controller
     //
     public function allData(){
       $contact = new Contact;
-      return view('messages', ['data' => $contact->all()]);
+      return view('messages', ['data' => $contact->simplePaginate(3)]);
 
       //take()возвращает количество записей
       //  return view('messages', ['data'=> $contact->orderBy('id', 'desc')->take(2)->get()]);
